@@ -1,3 +1,18 @@
-baseURL = "http://arsano.ninja/"
+baseURL = "http://www.arsano.ninja/"
 languageCode = "en-us"
 title = "A Journey in Automating the Datacenter"
+theme = "kiera"
+
+pygmentsCodeFences = true
+
+disqusShortname = "" #Disqus shortname
+googleAnalytics = "" #Google Analytics ID
+
+[author]
+    name = "Chris Arceneaux"       #Author name
+    github = "carceneaux"     #Github username
+    linkedin = "chris-arceneaux-8903047/"   #LinkedIn username
+    twitter = "chris_arceneaux"    #Twitter username
+
+[params]
+    tagline = "by Chris Arceneaux"
