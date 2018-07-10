@@ -1,18 +1,59 @@
-baseURL = "http://www.arsano.ninja/"
-languageCode = "en-us"
+baseurl = "https://www.arsano.ninja/"
 title = "A Journey in Automating the Datacenter"
-theme = "kiera"
+theme = "ghostwriter"
+languageCode = "en-us"
+copyright = "Chris Arceneaux"
+googleAnalytics = "XXX"
+disqusShortname = "XXX"
 
-pygmentsCodeFences = true
+[Privacy]
 
-disqusShortname = "" #Disqus shortname
-googleAnalytics = "" #Google Analytics ID
+[Privacy.disqus]
+    disable = true
 
-[author]
-    name = "Chris Arceneaux"       #Author name
-    github = "carceneaux"     #Github username
-    linkedin = "chris-arceneaux-8903047/"   #LinkedIn username
-    twitter = "chris_arceneaux"    #Twitter username
+[Privacy.googleAnalytics]
+    anonymizeIP = true
+    respectDoNotTrack = true
+    useSessionStorage = false
 
-[params]
-    tagline = "by Chris Arceneaux"
+[Author]
+    name = "Chris Arceneaux"
+    profile = "https://www.arsano.ninja/page/about/"
+
+[Taxonomies]
+    tag = "tags"
+
+[Params]
+    intro = true
+    headline = ""
+    description = "Focused mainly around Automation & Virtualization"
+    github = "https://github.com/carceneaux"
+    linkedin = "https://linkedin.com/in/chris-arceneaux-8903047/"
+    twitter = "https://twitter.com/chris_arceneaux"
+    email = "carceneaux@thinksis.com"
+    opengraph = true
+    shareTwitter = true
+    shareFacebook = false
+    shareGooglePlus = true
+    shareLinkedIn = true
+    dateFormat = "Mon, Jan 2, 2006"
+    highlightJsUrl = ""
+    highlightJsLocalUrl = ""
+
+[Permalinks]
+    post = "/:year/:month/:day/:filename/"
+
+[[menu.main]]
+    name = "Blog"
+    url = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Contact"
+    url = "/page/contact/"
+    weight = 2
+
+[[menu.main]]
+    name = "About"
+    url = "/page/about/"
+    weight = 3

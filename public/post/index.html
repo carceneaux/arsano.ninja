@@ -1,92 +1,159 @@
-<!doctype html>
-
-<html lang="en-us">
-
-<head>
-  <title>A Journey in Automating the Datacenter</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The HTML5 Herald" />
-  <meta name="author" content="Chris Arceneaux" />
-  <meta name="generator" content="Hugo 0.43" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" />
-  <link rel="stylesheet" type="text/css" href="/css/styles.css" />
-</head>
-
-<body>
-  <div id="container">
-    <header>
-      <h1>
-                <a href="/">A Journey in Automating the Datacenter</a>
-            </h1>
-
-      <ul id="social-media">
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Posts &middot; Chris Arceneaux</title>
+        <meta name="description" content="Focused mainly around Automation &amp; Virtualization">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.43" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Posts">
+<meta property="og:description" content="Focused mainly around Automation &amp; Virtualization">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.arsano.ninja/post/">
+        <link rel="stylesheet" href="https://www.arsano.ninja/dist/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         
-        <li><a href="https://twitter.com/chris_arceneaux"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-         
-        <li><a href="https://www.linkedin.com/in/chris-arceneaux-8903047/"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-         
-        <li><a href="https://github.com/carceneaux"><i class="fa fa-github fa-lg" aria-hidden="true"></i></a></li>
-           
-      </ul>
-      
-      <p><em>by Chris Arceneaux</em></p>
-      
+            <link href="https://www.arsano.ninja/post/index.xml" rel="alternate" type="application/rss+xml">
+        
+        
+    </head>
+    <body>
+        
+<script>
+var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+var doNotTrack = (dnt == "1" || dnt == "yes");
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'XXX', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a title="A Journey in Automating the Datacenter" href="https://www.arsano.ninja/">A Journey in Automating the Datacenter</a>
+                            </h1>
+                        
+                        <a class="button-square" href="https://www.arsano.ninja/index.xml"><i class="fa fa-rss"></i></a>
+                        
+                            <a class="button-square button-social hint--top" data-hint="Twitter" title="Twitter" href="https://twitter.com/chris_arceneaux">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Github" title="Github" href="https://github.com/carceneaux">
+                                <i class="fa fa-github-alt"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="LinkedIn" title="LinkedIn" href="https://linkedin.com/in/chris-arceneaux-8903047/">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" title="Email" href="mailto:carceneaux@thinksis.com">
+                                <i class="fa fa-envelope"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a title="Blog" href="/">Blog</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="Contact" href="/page/contact/">Contact</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a title="About" href="/page/about/">About</a>
+    </li>
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div id="post-index" class="container">
+    
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name"></h1>
+        <p>Focused mainly around Automation &amp; Virtualization</p>
     </header>
 
-    
-<nav>
-    <ul>
+
+
+    <ol class="post-list">
         
-    </ul>
-</nav>
-
-    <main>
-
-
-
-
-<section id="list">
-
-    
-
-    
-        <h2>Posts</h2>
-    
-
-    
-
-    
-
-    <h3>2018</h3>
-    <ul>
         
-        <li>
-            <a href="http://www.arsano.ninja/post/indy-vmug-usercon-2018-preso/">Indy VMUG UserCon 2018 Slides</a>
-            <time class="date-meta">Jul 10</time>
-        </li>
+            <li class="post-stub" itemprop="blogPost" itemscope="" itemtype="https://schema.org/BlogPosting">
+    <a href="https://www.arsano.ninja/2018/07/10/indy-vmug-usercon-2018-preso/" itemprop="url" title="Go to post detail">
+        <h4 class="post-stub-title" itemprop="name">Simplifying vSphere Automation with vRealize Orchestrator</h4>
+        <time class="post-stub-date" datetime="2018-07-10">Published Tue, Jul 10, 2018</time>
         
-    </ul>
-    
-    
+    </a>
+</li>
+        
+    </ol>
 
-</section>
+    <div class="post-navigation">
+        
 
-
-
-
-
-
-</main>
-    <footer>
-        <h6> | 
-            Rendered by <a href="https://gohugo.io" title="Hugo">Hugo</a> |
-            <a href="http://www.arsano.ninja/index.xml">Subscribe</a></h6>
-    </footer>
+    </div>
 </div>
-<script src="/js/scripts.js"></script>
-</body>
 
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a title="A Journey in Automating the Datacenter" href="https://www.arsano.ninja/">A Journey in Automating the Datacenter</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#">
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2018 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="https://www.arsano.ninja/js/jquery-1.11.3.min.js"></script>
+        <script src="https://www.arsano.ninja/js/jquery.fitvids.js"></script>
+        
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        <script src="https://www.arsano.ninja/js/scripts.js"></script>
+    </body>
 </html>

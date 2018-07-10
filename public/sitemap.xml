@@ -3,65 +3,67 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://www.arsano.ninja/post/indy-vmug-usercon-2018-preso/</loc>
+    <loc>https://www.arsano.ninja/2018/07/10/indy-vmug-usercon-2018-preso/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://www.arsano.ninja/</loc>
-    <lastmod>2018-07-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.arsano.ninja/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.arsano.ninja/categories/post/</loc>
+    <loc>https://www.arsano.ninja/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.arsano.ninja/post/</loc>
+    <loc>https://www.arsano.ninja/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.arsano.ninja/page/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.arsano.ninja/page/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.arsano.ninja/post/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.arsano.ninja/tags/slides/</loc>
+    <loc>https://www.arsano.ninja/tags/slides/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.arsano.ninja/tags/</loc>
+    <loc>https://www.arsano.ninja/tags/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.arsano.ninja/tags/usercon/</loc>
+    <loc>https://www.arsano.ninja/tags/usercon/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.arsano.ninja/tags/vmug/</loc>
+    <loc>https://www.arsano.ninja/tags/vmug/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.arsano.ninja/tags/vrealize-orchestrator/</loc>
+    <loc>https://www.arsano.ninja/tags/vrealize-orchestrator/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://www.arsano.ninja/tags/vro/</loc>
+    <loc>https://www.arsano.ninja/tags/vro/</loc>
     <lastmod>2018-07-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
