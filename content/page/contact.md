@@ -5,7 +5,7 @@ author = "Chris Arceneaux"
 description = "How to contact me."
 +++
 
-## Contact
+## Contac
 
 Email - **carceneaux@thinksis.com**
 twitter - [**@chris_arceneaux**](https://twitter.com/chris_arceneaux)

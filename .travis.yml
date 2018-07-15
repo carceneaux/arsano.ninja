@@ -1,6 +1,13 @@
+language: python
+
+python:
+  - "3.6.5"
+  cache: pip
+
 install:
     - wget https://github.com/gohugoio/hugo/releases/download/v0.44/hugo_0.44_Linux-64bit.deb
     - sudo dpkg -i hugo*.deb
+    - pip install awscli
 
 script:
     - hugo
@@ -12,3 +19,26 @@ deploy:
   bucket: $S3_BUCKET
   skip_cleanup: true
   local_dir: public
+
+deploy:
+  # Control deployment by setting a value for `on`. Setting the `branch`
+  # option to `master` means Travis will only attempt a deployment on
+  # builds of your repo's master branch (e.g., after you merge a PR).
+  on:
+    branch: master
+  provider: s3
+  # You can refer to environment variables from Travis repo settings!
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+  # Name of the S3 bucket to which your site should be uploaded.
+  bucket: $S3_BUCKET
+  # Prevent Travis from deleting your built site so it can be uploaded.
+  skip_cleanup: true
+  # Path to a directory containing your built site.
+  local_dir: public
+  # Set the Cache-Control header.
+  cache_control: "max-age=21600"
+
+after_deploy:
+  # Invalidate every object in the targeted distribution.
+  - aws cloudfront create-invalidation --distribution-id %distID% --paths "/*"
