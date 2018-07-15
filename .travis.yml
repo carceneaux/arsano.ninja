@@ -5,6 +5,11 @@ install:
 script:
     - hugo
 
+after_success: |
+    git rm -rf .
+    mv public/* .
+    rm -rf public hugo_*
+
 deploy:
   provider: pages
   skip-cleanup: true
