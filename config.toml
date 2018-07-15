@@ -3,7 +3,7 @@ title = "A Journey in Automating the Datacenter"
 theme = "ghostwriter"
 languageCode = "en-us"
 copyright = "Chris Arceneaux"
-googleAnalytics = ""
+googleAnalytics = "XXX"
 disqusShortname = "arsano-ninja"
 
 [Privacy]

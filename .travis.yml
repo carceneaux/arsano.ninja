@@ -9,7 +9,6 @@ script:
     - mdl -r ~MD002,~MD013,~MD033 content/ # rules MD013 & MD033 have been exluded
     - hugo
 
-
 ### Sending newly generated website to GitHub Pages
 deploy:
   provider: pages
