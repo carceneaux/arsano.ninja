@@ -6,5 +6,7 @@ install:
     - sudo dpkg -i hugo*.deb
 
 script:
-    - node
+    - cd themes/ghostwriter
+    - npm install
+    - cd ../..
     - hugo
