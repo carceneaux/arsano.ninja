@@ -1,4 +1,4 @@
-baseurl = "http://test.arsano.ninja/"
+baseurl = "https://carceneaux.github.io/arsano.ninja/"
 title = "A Journey in Automating the Datacenter"
 theme = "ghostwriter"
 languageCode = "en-us"
@@ -18,7 +18,7 @@ disqusShortname = "arsano-ninja"
 
 [Author]
     name = "Chris Arceneaux"
-    profile = "http://www.arsano.ninja/page/about/"
+    profile = "https://carceneaux.github.io/arsano.ninja/page/about/"
 
 [Taxonomies]
     tag = "tags"
