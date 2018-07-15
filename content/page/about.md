@@ -11,7 +11,7 @@ Chris Arceneaux is a developer with over 15 years experience in datacenter infra
 
 Outside of work, he enjoys spending time with his family, traveling, and, of course, learning the latest automation technologies.
 
-![VMware Certs, AWS Certified Developer & CCNA](/images/other-certs.png)
+![VMware Certs, AWS Certified Developer & CCNA]({{ $.Site.BaseURL }}/images/other-certs.png)
 
 For a complete list of Chris's certifications, see his LinkedIn profile below:
 
