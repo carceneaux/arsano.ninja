@@ -12,8 +12,8 @@ install:
 
 ### Testing markdown and building website
 script:
+    - mdl content/
     - hugo
-    - mdl public/
 
 
 ### Sending newly generated website to S3 bucket
