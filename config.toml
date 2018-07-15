@@ -3,13 +3,13 @@ title = "A Journey in Automating the Datacenter"
 theme = "ghostwriter"
 languageCode = "en-us"
 copyright = "Chris Arceneaux"
-googleAnalytics = "XXX"
-disqusShortname = "XXX"
+googleAnalytics = "UA-6526296-12"
+disqusShortname = "arsano-ninja-1.disqus.com"
 
 [Privacy]
 
 [Privacy.disqus]
-    disable = true
+    disable = false
 
 [Privacy.googleAnalytics]
     anonymizeIP = true
