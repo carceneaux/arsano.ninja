@@ -12,7 +12,7 @@ install:
 
 ### Testing markdown and building website
 script:
-    - mdl -r ~MD013,~MD033 content/
+    - mdl -r ~MD013,~MD033 content/ # rules MD013 & MD033 have been exluded
     - hugo
 
 
