@@ -1,9 +1,9 @@
-baseurl = "https://carceneaux.github.io/arsano.ninja/"
+baseurl = "https://test.arsano.ninja/"
 title = "A Journey in Automating the Datacenter"
 theme = "ghostwriter"
 languageCode = "en-us"
 copyright = "Chris Arceneaux"
-googleAnalytics = "UA-6526296-12"
+googleAnalytics = ""
 disqusShortname = "arsano-ninja"
 
 [Privacy]
@@ -18,7 +18,7 @@ disqusShortname = "arsano-ninja"
 
 [Author]
     name = "Chris Arceneaux"
-    profile = "https://carceneaux.github.io/arsano.ninja/page/about/"
+    profile = "https://test.arsano.ninja/page/about/"
 
 [Taxonomies]
     tag = "tags"
