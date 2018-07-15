@@ -5,14 +5,10 @@ install:
 script:
     - hugo
 
-after_success: |
-    git rm -rf .
-    mv public/* .
-    rm -rf public hugo_*
-
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   bucket: $S3_BUCKET
   skip_cleanup: true
+  local_dir: public
