@@ -12,7 +12,7 @@ install:
 
 ### Testing markdown and building website
 script:
-    - mdl content/
+    - mdl -r ~MD013 content/
     - hugo
 
 
