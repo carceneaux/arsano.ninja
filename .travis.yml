@@ -16,6 +16,5 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
   local-dir: public
-  fqdn: test.arsano.ninja
   on:
     branch: test
