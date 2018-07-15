@@ -8,10 +8,12 @@ install:
     - wget https://github.com/gohugoio/hugo/releases/download/v0.44/hugo_0.44_Linux-64bit.deb
     - sudo dpkg -i hugo*.deb
     - pip install awscli
+    - gem install mdl
 
-### Building website
+### Testing markdown and building website
 script:
     - hugo
+    - mdl public/
 
 
 ### Sending newly generated website to S3 bucket
