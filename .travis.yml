@@ -32,4 +32,4 @@ deploy:
 
 after_deploy:
   # Invalidate every object in the targeted distribution.
-  - aws cloudfront create-invalidation --distribution-id %distID% --paths "/*"
+  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
