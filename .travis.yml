@@ -2,7 +2,6 @@ language: python
 
 python:
   - "3.6.5"
-  cache: pip
 
 install:
     - wget https://github.com/gohugoio/hugo/releases/download/v0.44/hugo_0.44_Linux-64bit.deb
