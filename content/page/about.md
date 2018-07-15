@@ -1,14 +1,18 @@
 +++
-title = "About"
+title = "About Me"
 date = "2018-07-10T010:13:50Z"
 author = "Chris Arceneaux"
-description = "Things about me."
+description = ""
 +++
 
-# About
+![Picture of Chris Arceneaux](/images/chris-bowtie.jpg)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dolor in magna lobortis egestas. Suspendisse eu erat tempor, tristique neque eu, convallis nulla. Curabitur vel bibendum lacus, at semper mauris. Suspendisse aliquet commodo ex, sed sagittis metus aliquam id. Maecenas feugiat rutrum lorem vel imperdiet. Nullam ornare lectus ut enim finibus, et porttitor mi tincidunt. Aenean lacinia, leo quis vehicula eleifend, quam libero sagittis erat, at euismod augue mauris et sapien. Sed id vehicula lectus, sit amet auctor ipsum. Nunc sed massa vel ex condimentum aliquam in a enim. Cras enim sem, tristique eu enim ac, congue commodo mi. Integer quis orci at dolor blandit eleifend.
+Chris Arceneaux is a developer with over 15 years experience in datacenter infrastructure administration and automation. He's worked in multiple areas in the field from Healthcare to Service Provider so he understands the challenges on both sides of the fence. Above all, *he LOVES automation*!
 
-## Shool
+Outside of work, he enjoys spending time with his family, traveling, and, of course, learning the latest automation technologies.
 
-Sed quis pulvinar nisi, sed dapibus lacus. Mauris tempus ex ut ipsum facilisis interdum. Integer feugiat urna sed feugiat tempor. Quisque dictum vestibulum feugiat. Nunc nec est volutpat lorem imperdiet egestas sit amet ut orci. Aliquam venenatis neque ipsum, a placerat lectus cursus at. Donec pellentesque tellus hendrerit faucibus posuere. Etiam gravida consequat lectus, volutpat consectetur velit convallis nec. Praesent sagittis luctus dignissim.
+![VMware Certs, AWS Certified Developer & CCNA](/images/other-certs.png)
+
+For a complete list of Chris's certifications, see his LinkedIn profile below:
+
+<script src="//platform.linkedin.com/in.js" type="text/javascript"></script><script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/chris-arceneaux-8903047" data-format="inline" data-related="false"></script>
