@@ -3,4 +3,4 @@
 	url = https://github.com/avianto/hugo-kiera.git
 [submodule "themes/ghostwriter"]
 	path = themes/ghostwriter
-	url = https://github.com/jbub/ghostwriter
+	url = git@github.com:carceneaux/ghostwriter.git
