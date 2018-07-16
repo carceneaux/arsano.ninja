@@ -31,7 +31,7 @@ Here are the following automated features I set out to add to my website:
 
 I knew that I needed a CI/CD solution to fulfill any of my features and, most of all, I wanted it to be *free*. With that, I found [Travis-CI](https://travis-ci.org/). It was easy to learn and very robust. To be honest, I've been immensely impressed with Travis-CI.
 
-## *[Prerequisites for following the instructions below]*
+## [Prerequisites for following the instructions below]
 
 * A Hugo-based website
 * AWS S3 bucket used for back-end storage
@@ -45,7 +45,7 @@ I knew that I needed a CI/CD solution to fulfill any of my features and, most of
 
 Each of the features I wanted to automate you can find in its own section below.
 
-### Validation of Markdown
+### 1. Validation of Markdown
 
 With a little googling, I found a Ruby-based [Markdown Lint tool](https://github.com/markdownlint/markdownlint) that was pretty solid. Better yet, from watching the Travis-CI build logs, I knew that ruby was already installed in the base testing environment.
 
@@ -65,7 +65,7 @@ That's it! Easy peasy lemon squeezy!
 
 You'll notice that I excluded some of the rules when checking. I did this as I found these rules were not beneficial for a website. On another note, I also recommend you install a Markdown Lint program on your IDE as well. *(I use [Microsoft Visual Studio Code](https://code.visualstudio.com/) for my IDE and [markdownlint](https://github.com/DavidAnson/vscode-markdownlint).)*
 
-### Generation of Website using Hugo
+### 2. Generation of Website using Hugo
 
 The more you use Travis-CI, the more you'll find there are multiple methods to accomplish your goal. I think this speaks volumes to how powerful the tool really is. I ended up finding another [article](https://jellis18.github.io/post/2017-12-03-continuous-integration-hugo/) online that had the pieces of code that I thought accomplished my goal the simplest.
 
@@ -84,13 +84,13 @@ script:
 
 Note: The version of Hugo listed above was the latest stable version upon writing this post. To identify the latest version when you're configuring this I recommend you go [here](https://github.com/gohugoio/hugo/releases/).
 
-### Deployment of website to hosted S3 storage
+### 3. Deployment of website to hosted S3 storage
 
-When researching the method to accomplish this feature was when my eyes opened up to how robust Travis-CI is with what they offer pre-packaged with the tool for free.
+When I was researching the method to accomplish this feature was when my eyes opened up to how robust Travis-CI is with what they offer pre-packaged with the tool for free.
 
 The [Travis-CI Deployment Documentation](https://docs.travis-ci.com/user/deployment) speaks for itself. For this feature, I used the documentation found [here](https://docs.travis-ci.com/user/deployment/s3/).
 
-To set this up, we'll have one additional step in the Travis-CI Web UI.
+To set this up, we'll have additional steps in the Travis-CI Web UI and the AWS IAM Console.
 
 #### Code for Travis-CI: AWS S3
 
@@ -122,7 +122,7 @@ deploy:
 
 The reason for this step is for good security. The user we are about to create will have limited access to your AWS environment. If you desire, you could restrict the account even further by restricting it to only the S3 bucket and AWS CloudFront instance that you want it to interact with. For our purposes, I feel this is sufficient but to each his own.
 
-* Navigate to [AWS Identity & Access Management (IAM) portal](https://console.aws.amazon.com/iam/home#/users)
+* Navigate to the [AWS Identity & Access Management (IAM) portal](https://console.aws.amazon.com/iam/home#/users)
 * Click **Add User**
   * Set **User name**. *ie. travis-ci*
   * For **Access type**, select **Programmatic access**
@@ -135,7 +135,7 @@ The reason for this step is for good security. The user we are about to create w
   * Click **Next: Review**
 * Keep credentials on-screen for next step
 
-#### Define Environment Variables within the Travis-CI Web UI
+#### Define Environment Variables within the Travis-CI Web UI: AWS S3
 
 **Note:** You could define these variables straight in the `.travis.yml` but then you'd have to encrypt them following [this process](https://docs.travis-ci.com/user/environment-variables/#Defining-encrypted-variables-in-.travis.yml). Per Travis-CI docs, the only time it makes sense to put encrypted variables in the `.travis.yml`, is when the variable will change depending on the branch being committed.
 
@@ -148,9 +148,11 @@ The reason for this step is for good security. The user we are about to create w
   * **S3_BUCKET**
     * S3 bucket name that holds your static website
 
-### CloudFront Invalidation (tells AWS to pull in the latest content)
+Note: Make sure to leave the Travis-CI environment variable on its default value for *Display value in build log*. ***NEVER*** display your AWS access key and secret key on the internet. Within an hour, you'll have people creating servers in your name in AWS! On that note, set an alert for yourself in AWS if your bill exceeds a certain amount. *This is a good idea for another blog article...*
 
-In [Thom Greene's article](https://www.thomgreene.com/post/2018/2018-05-29-staticsitehugo/) that I referenced previously, he brought out the need to *invalidate* the CloudFront cache to force the latest content of your website to be re-cached. Without doing this, the CloudFront cache expires every 24 hours by default. The method he suggests is a simply AWS CLI command to do the deed.
+### 4. CloudFront Invalidation (tells AWS to pull in the latest content)
+
+In [Thom Greene's article](https://www.thomgreene.com/post/2018/2018-05-29-staticsitehugo/) that I referenced previously, he brought out the need to *invalidate* the CloudFront cache to force the latest content of your website to be re-cached. Without doing this, the CloudFront cache expires every 24 hours by default. The method he suggests is a simple AWS CLI command to do the deed.
 
 ```cli
 aws cloudfront create-invalidation --distribution-id %distID% --paths "/*"
@@ -160,7 +162,7 @@ aws cloudfront create-invalidation --distribution-id %distID% --paths "/*"
 
 Notice the variable `%distID%` being used in this command. This works fine when executed from my Mac, but does not work when executed in Travis-CI. This is not hard to overcome. You simply need to go to the [AWS CloudFront Console](https://console.aws.amazon.com/cloudfront/home?#) and capture the **ID** of your CloudFront instance.
 
-#### Define Environment Variables within the Travis-CI Web UI
+#### Define Environment Variables within the Travis-CI Web UI: AWS CloudFront
 
 * In the [Travis-CI Web UI](https://travis-ci.org/), edit the **Settings** for the GitHub repo with your Hugo source files.
 * Add the following environment variables using these *exact* names:
@@ -191,7 +193,7 @@ after_deploy:
   - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 ```
 
-Looking at the code above, you'll see that Travis-CI is simply being instructed to install the AWS CLI. You might be wondering, *but how is aws cli going to authenticate to my AWS environment?* The answer is in the Travis-CI environment variables we created previously. The same ones we created for the S3 transfer, aws cli is able to use as well.
+Looking at the code above, you'll see that Travis-CI is simply being instructed to install the AWS CLI. You might be wondering, *"but how is aws cli going to authenticate to my AWS environment?"* The answer is in the Travis-CI environment variables we created previously. The same ones we created for the S3 transfer, aws cli is able to use as well.
 
 ## Putting Everything Together
 
@@ -241,6 +243,16 @@ after_deploy:
   # Invalidate every object in the targeted distribution.
   - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 ```
+
+One final point that I'll bring out is to pay attention to the procession of the code in the `.travis.yml`.
+
+1. Define any special coding languages that need to be used.
+2. Install pre-requisites
+3. Run testing code
+4. Deploy code to production
+5. Define code to deploy afterwards
+
+It's important to note that these steps are executed as a **whole**. For example, if one the Markdown validation fails - `mdl -r ~MD002,~MD013,~MD033 content/` - Travis-CI will continue to execute the `hugo` command as it's a part of step #3. It will not, however, continue to step #4 and will fail out the build.
 
 ## Feedback
 
