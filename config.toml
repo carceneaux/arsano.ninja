@@ -37,8 +37,8 @@ disqusShortname = "arsano-ninja"
     shareGooglePlus = true
     shareLinkedIn = true
     dateFormat = "Mon, Jan 2, 2006"
-    highlightJsUrl = "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/{{.}}.min.js"
-    highlightJsLocalUrl = ""
+    highlightJsUrl = ""
+    highlightJsLocalUrl = "/js/highlight.pack.js"
     highlightjs = true
     # highlightjsstyle = "github"
 
