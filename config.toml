@@ -39,6 +39,8 @@ disqusShortname = "arsano-ninja"
     dateFormat = "Mon, Jan 2, 2006"
     highlightJsUrl = ""
     highlightJsLocalUrl = ""
+    highlightjs = true
+    # highlightjsstyle = "github"
 
 [Permalinks]
     post = "/:year/:month/:day/:filename/"
