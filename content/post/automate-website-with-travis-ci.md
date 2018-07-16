@@ -252,7 +252,7 @@ One final point that I'll bring out is to pay attention to the procession of the
 1. Deploy code to production
 1. Define code to deploy afterwards
 
-It's important to note that these steps are executed as a **whole**. For example, if one the Markdown validation fails - `mdl -r ~MD002,~MD013,~MD033 content/` - Travis-CI will continue to execute the `hugo` command as it's a part of step #3. It will not, however, continue to step #4 and will fail out the build.
+It's important to note that these steps are executed as a **whole**. For example, if the Markdown validation fails in step #3 - `mdl -r ~MD002,~MD013,~MD033 content/` - Travis-CI will continue to execute the `hugo` command as it's a part of step #3. It will not, however, continue to step #4 and will fail out the build.
 
 ## Feedback
 
