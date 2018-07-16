@@ -247,10 +247,10 @@ after_deploy:
 One final point that I'll bring out is to pay attention to the procession of the code in the `.travis.yml`.
 
 1. Define any special coding languages that need to be used.
-2. Install pre-requisites
-3. Run testing code
-4. Deploy code to production
-5. Define code to deploy afterwards
+1. Install pre-requisites
+1. Run testing code
+1. Deploy code to production
+1. Define code to deploy afterwards
 
 It's important to note that these steps are executed as a **whole**. For example, if one the Markdown validation fails - `mdl -r ~MD002,~MD013,~MD033 content/` - Travis-CI will continue to execute the `hugo` command as it's a part of step #3. It will not, however, continue to step #4 and will fail out the build.
 
