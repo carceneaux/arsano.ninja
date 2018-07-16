@@ -38,7 +38,7 @@ disqusShortname = "arsano-ninja"
     shareLinkedIn = true
     dateFormat = "Mon, Jan 2, 2006"
     highlightJsUrl = ""
-    highlightJsLocalUrl = "/js/highlight.pack.js"
+    highlightJsLocalUrl = "js/highlight.pack.js"
 
 [Permalinks]
     post = "/:year/:month/:day/:filename/"
