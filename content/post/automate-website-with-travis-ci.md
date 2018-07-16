@@ -199,8 +199,6 @@ Looking at the code above, you'll see that Travis-CI is simply being instructed 
 
 To make the code easier to understand, I piecemealed the `.travis.yml` thus far. Below you'll find the complete `.travis.yml` including all of the features that I've discussed in this post:
 
-{{< highlight yml >}}
-
 ```yml
 ### Python is necessary for AWS CLI
 language: python
@@ -245,8 +243,6 @@ after_deploy:
   # Invalidate every object in the targeted distribution.
   - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
 ```
-
-{{< /highlight >}}
 
 One final point that I'll bring out is to pay attention to the procession of the code in the `.travis.yml`.
 
