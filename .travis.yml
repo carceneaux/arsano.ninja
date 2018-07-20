@@ -40,7 +40,7 @@ deploy:
       all_branches: true
       condition: $TRAVIS_BRANCH != "master"
     # GitHub Repo to deploy to
-    repo: "carceneaux.github.io"
+    repo: "carceneaux/carceneaux.github.io"
     # Target branch to commit to
     target-branch: "master"
     # Prevent Travis from deleting your built site so it can be uploaded.
