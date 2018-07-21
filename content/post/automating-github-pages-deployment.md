@@ -29,7 +29,7 @@ Truthfully, though, I accomplished two things researching and writing this post 
 
 [GitHub Pages](https://pages.github.com/) is a free service that allows static HTML website hosting, including the ability to support custom domains. The static HTML for the website is stored in a GitHub repository of your choosing.
 
-It's important to note that there are 2 different types of GitHub Pages Sites - *User/Organization* and *Project*. I won't go into the specifics on the differences between these sites but you can find that information [here](https://help.github.com/articles/user-organization-and-project-pages/). For this guide, we'll be using an **User** GitHub Pages site.
+It's important to note that there are 2 different types of GitHub Pages Sites - *User/Organization* and *Project*. I won't go into the specifics on the differences between these sites but you can find that information [here](https://help.github.com/articles/user-organization-and-project-pages/). For this guide, we'll be using a GitHub Pages **User** site.
 
 ## [Prerequisites for following the instructions below]
 
@@ -41,7 +41,7 @@ It's important to note that there are 2 different types of GitHub Pages Sites - 
 * *(optional)* - DNS control of your custom domain
 * *(optional)* - Base knowledge of DNS
 
-## Let's Automate
+## Automation Time
 
 Automating this deployment is super easy and can be accomplished in just a few steps. I'll cover these in the sections below.
 
@@ -57,7 +57,7 @@ In order to create a GitHub Pages *User* site, you'll need to create a GitHub re
 <github-username>.github.io
 ```
 
-For example, my GitHub profile is: *github.com/**carceneaux***
+For example, my GitHub profile is: github.com/**carceneaux**
 
 So the GitHub repo name for my site is:
 
@@ -149,7 +149,7 @@ Defining options:
 
 ## Putting Everything Together
 
-As mentioned at the beginning of this article, I was looking to use the code discussed today to create a test site for my website. The code in the `.travis.yml` is an add-on from my [previous post]({{< siteurl >}}2018/07/15/automate-website-with-travis-ci/) where I discussed automated markdown testing and deployment to AWS S3 & CloudFront.
+As mentioned at the beginning of this article, I was looking to use the code discussed today to create a test site for my website. The code in the `.travis.yml` below is an add-on from my [previous post]({{< siteurl >}}2018/07/15/automate-website-with-travis-ci/) where I discussed automated markdown testing and deployment to AWS S3 & CloudFront.
 
 ```yml
 ### Python is necessary for AWS CLI
@@ -212,6 +212,4 @@ after_deploy:
   - if [[ $TRAVIS_BRANCH == "master" ]]; then aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"; fi
 ```
 
-This new code allows Travis-CI to distinguish between my *testing* and *production* website code. Basically, my `master` branch is where the source code for *www.arsano.ninja* is kept and any other branch is deployed to *test.arsano.ninja*.
-
-You'll notice some simple conditional logic in my `.travis.yml` to allow this behavior.
+This new code allows Travis-CI to distinguish between my *testing* and *production* website code. Basically, my `master` branch is where the source code for *[www.arsano.ninja](https://www.arsano.ninja)* is kept and any other branch is deployed to *[test.arsano.ninja](https://test.arsano.ninja)*. You'll notice some simple conditional logic in my `.travis.yml` to allow this behavior.
