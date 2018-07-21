@@ -13,7 +13,7 @@ install:
 ### Testing markdown and building website
 script:
     - mdl -r ~MD002,~MD013,~MD033 content/ # rules MD013 & MD033 have been exluded
-    - hugo
+    - if [[ $TRAVIS_BRANCH == "master" ]]; then hugo; else hugo --config=test.toml; fi
 
 
 ### Sending newly generated website to S3 bucket
@@ -39,6 +39,12 @@ deploy:
     on:
       all_branches: true
       condition: $TRAVIS_BRANCH != "master"
+    # GitHub Repo to deploy to
+    repo: "carceneaux/carceneaux.github.io"
+    # Target branch to commit to
+    target-branch: "master"
+    # Sets the custom domain for my GitHub page
+    fqdn: test.arsano.ninja
     # Prevent Travis from deleting your built site so it can be uploaded.
     skip-cleanup: true
     # GitHub personal access token
