@@ -1,6 +1,6 @@
 +++
 title = "Automating GitHub Pages Deployment"
-description = "Leveraging the Travis-CI GitHub Pages Provider to validate/build a website and deploy it."
+description = "Leveraging Travis-CI & GitHub Pages build and host a website."
 tags = [
     "ci/cd",
     "travis-ci",
