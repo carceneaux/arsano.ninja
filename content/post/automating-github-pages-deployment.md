@@ -216,3 +216,9 @@ after_deploy:
 ```
 
 This new code allows Travis-CI to distinguish between my *testing* and *production* website code. Basically, my `master` branch is where the source code for *[www.arsano.ninja](https://www.arsano.ninja)* is kept and any other branch is deployed to *[test.arsano.ninja](https://test.arsano.ninja)*. You'll notice some simple conditional logic in my `.travis.yml` to allow this behavior.
+
+## Feedback
+
+I hope you find this post useful! I know it's been a learning experience for me as I've never used Travis-CI previously.
+
+Please leave feedback below as it will be appreciated. If you have ideas for future posts that you'd like to see, please let me know and I'll look into it.
