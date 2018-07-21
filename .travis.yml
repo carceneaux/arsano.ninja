@@ -12,9 +12,8 @@ install:
 
 ### Testing markdown and building website
 script:
-    - mdl -r ~MD002,~MD013,~MD033 content/ # rules MD013 & MD033 have been exluded
+    - mdl -r ~MD002,~MD013,~MD033 content/ # rules that have been exluded
     - if [[ $TRAVIS_BRANCH == "master" ]]; then hugo; else hugo --config=test.toml; fi
-
 
 ### Sending newly generated website to S3 bucket
 deploy:
@@ -51,8 +50,6 @@ deploy:
     github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
     # Path to a directory containing your built site.
     local-dir: public
-    
-
 
 ### Forcing AWS CloudFront to refresh its cache
 after_deploy:
