@@ -21,9 +21,12 @@ When I set out to build the website for my blog, I knew I wanted to have the abi
 
 I ended up choosing Hugo, but either option is great. I recommend you do the research and choose for yourself (or just find a good blog post to follow).
 
-As mentioned in a [previous post]({{< siteurl >}}2018/07/15/automate-website-with-travis-ci/), I use AWS S3, Route53, and CloudFront to host my website. You might be asking yourself then, "why is this guy writing about deploying to GitHub Pages then?" To answer that, because it's fun!
+As mentioned in a [previous post]({{< siteurl >}}2018/07/15/automate-website-with-travis-ci/), I use AWS S3, Route53, and CloudFront to host my website. You might be asking yourself, "why is this guy writing about deploying to GitHub Pages then?" To answer that, because it's fun!
 
-Truthfully, though, I accomplished two things researching and writing this post as I was able to learn more about GitHub Pages & Travis-CI as well as have a publicly accessible location for a test version of my website.
+Truthfully, though, I accomplished two things researching and writing this post:
+
+1. I was able to learn more about GitHub Pages & Travis-CI.
+1. I wanted to have a publicly accessible location for a test version of my website.
 
 ## GitHub Pages
 
@@ -71,7 +74,7 @@ carceneaux.github.io
 
 If you have a custom domain that you'd like to leverage with GitHub Pages, you'll need to create a [CNAME record](https://en.wikipedia.org/wiki/CNAME_record) for your domain in your DNS configuration.
 
-Depending on what online service your using to manage DNS for your domain, the steps to do this will vary. The typical process follows as such:
+Depending on what online service you're using to manage DNS for your domain, the steps to do this will vary. The typical process follows as such:
 
 * Select the domain where you want to administer DNS
   * For me, that's **arsano.ninja**
