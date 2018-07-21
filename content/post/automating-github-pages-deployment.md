@@ -205,8 +205,6 @@ deploy:
     github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
     # Path to a directory containing your built site.
     local-dir: public
-    
-
 
 ### Forcing AWS CloudFront to refresh its cache
 after_deploy:
