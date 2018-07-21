@@ -219,6 +219,6 @@ This new code allows Travis-CI to distinguish between my *testing* and *producti
 
 ## Feedback
 
-I hope you find this post useful! I know it's been a learning experience for me as I've never used Travis-CI previously.
+I hope you find this post useful! I know it's been a learning experience for me as I've never used GitHub Pages previously.
 
 Please leave feedback below as it will be appreciated. If you have ideas for future posts that you'd like to see, please let me know and I'll look into it.
