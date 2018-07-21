@@ -13,7 +13,7 @@ install:
 ### Testing markdown and building website
 script:
     - mdl -r ~MD002,~MD013,~MD033 content/ # rules MD013 & MD033 have been exluded
-    - hugo
+    - if [[ $TRAVIS_BRANCH == "master" ]]; then hugo; else hugo --config=test.toml; fi
 
 
 ### Sending newly generated website to S3 bucket
