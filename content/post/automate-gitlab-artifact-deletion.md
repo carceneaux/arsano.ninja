@@ -59,6 +59,6 @@ Deleting artifacts via the Web UI is a non-starter IMO unless you only want to d
 
 ### Bash Script for removing GitLab Job Artifacts
 
-[Script Source Code}(https://gist.github.com/carceneaux/b75d483e3e0cb798ae60c424300d5a0b)
+[Script Source Code](https://gist.github.com/carceneaux/b75d483e3e0cb798ae60c424300d5a0b)
 
 Prior to running the script, make sure you have `curl` and `jq` installed and you've updated the `project_id`, `token`, and `server` variables to match your environment.
