@@ -20,7 +20,7 @@ categories = [
 
 _**Note:** If you're unfamiliar with GitLab CI, I highly recommend you try it out on GitLab.com for free._
 
-A few months ago the disk space on my on-prem GitLab instance began to fill up. Fortunately for me, my monitoring reported the issue to me before it became a major problem. My first thought was, _why is this happening?_ I knew that I had provisioned more than enough space and there should be no reason it was almost full.
+A few months ago, the disk space on my on-prem GitLab instance began to fill up. Fortunately for me, my monitoring reported the issue before it became a major problem. My first thought was, _why is this happening?_ I knew that I had provisioned more than enough space and there should be no reason it was almost full.
 
 After a brief investigation, I found that the _build artifacts_ section of most of my repositories was 99% of the total repository size...some of them being over 40GB! That's when I went down the rabbit hole of artifact retention and artifact deletion. In this post, we'll focus on the _solution_ to this problem as well as a _stop-gap_.
 
@@ -55,7 +55,7 @@ Now that I've discussed proper handling of Job Artifacts, let's move on to the s
 * GitLab Web UI
 * GitLab REST API
 
-Deleting artifacts via the Web UI is a non-starter IMO unless you only want to delete only a few. That leaves the best option to be leveraging the REST API. In my searching, I came upon a very helpful [GitLab forum post](https://forum.gitlab.com/t/remove-all-artifact-no-expire-options/9274/8). This served as the base for the script I used to clean up my artifacts. I hope this serves you well.
+Deleting artifacts via the Web UI is a non-starter IMO unless you want to delete only a few. That leaves the best option to be leveraging the REST API. In my searching, I came upon a very helpful [GitLab forum post](https://forum.gitlab.com/t/remove-all-artifact-no-expire-options/9274/8). This served as the base for the script I used to clean up my artifacts. I hope this serves you well.
 
 ### Bash Script for removing GitLab Job Artifacts
 
