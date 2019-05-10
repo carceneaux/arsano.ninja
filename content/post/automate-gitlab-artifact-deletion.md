@@ -1,5 +1,5 @@
 +++
-title = "GitLab CI Job Artifacts"
+title = "GitLab CI Artifact Retention"
 description = "Discussion on proper handling of GitLab CI Job Artifacts."
 tags = [
     "gitlab",
@@ -9,15 +9,16 @@ tags = [
     "rest api",
     "job",
     "artifact",
-    "artifact deletion"
+    "artifact deletion",
+    "artifact retention"
 ]
-date = "2019-05-9"
+date = "2019-05-09"
 categories = [
     "Post"
 ]
 +++
 
-A few months ago the HD containing my on-prem GitLab instance began to fill up. Fortunately for me, my monitoring reported the issue to me before it became a major problem. My first thought was, _why is my HD filling up?_ I knew that I had provisioned more than enough space and there should be no reason it was full.
+A few months ago the disk space on my on-prem GitLab instance began to fill up. Fortunately for me, my monitoring reported the issue to me before it became a major problem. My first thought was, _why is this happening?_ I knew that I had provisioned more than enough space and there should be no reason it was almost full.
 
 After a brief investigation, I found that the _build artifacts_ section of most of my repositories was 99% of the total repository size...some of them being over 40GB in size! That's when I went down the rabbit hole of artifact retention and artifact deletion. In this post, we'll focus on the _solution_ to this problem as well as a _stop-gap_.
 
