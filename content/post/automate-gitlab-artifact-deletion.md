@@ -1,5 +1,5 @@
 +++
-title = "GitLab CI Artifact Retention"
+title = "GitLab CI Artifact Expiration"
 description = "Discussion on proper handling of GitLab CI Job Artifacts."
 tags = [
     "gitlab",
@@ -10,7 +10,7 @@ tags = [
     "job",
     "artifact",
     "artifact deletion",
-    "artifact retention"
+    "artifact expiration"
 ]
 date = "2019-05-09"
 categories = [
@@ -22,21 +22,23 @@ _**Note:** If you're unfamiliar with GitLab CI, I highly recommend you try it ou
 
 A few months ago, the disk space on my on-prem GitLab instance began to fill up. Fortunately for me, my monitoring reported the issue before it became a major problem. My first thought was, _why is this happening?_ I knew that I had provisioned more than enough space and there should be no reason it was almost full.
 
-After a brief investigation, I found that the _build artifacts_ section of most of my repositories was 99% of the total repository size...some of them being over 40GB! That's when I went down the rabbit hole of artifact retention and artifact deletion. In this post, we'll focus on the _solution_ to this problem as well as a _stop-gap_.
+After a brief investigation, I found that the _build artifacts_ section of most of my repositories was 99% of the total repository size...some of them being over 40GB! That's when I went down the rabbit hole of artifact expiration. In this post, we'll focus on the _solution_ to this problem as well as a _stop-gap_.
 
 ## Solution
 
-### Set Global Artifact Retention Policy _(On-Prem Only)_
+### Set Default Artifact Expiration Policy _(On-Prem Only)_
 
-The default [GitLab Global Policies](https://docs.gitlab.com/ee/user/gitlab_com/index.html#gitlab-cicd) for artifact expiration differ between GitLab.com and on-prem GitLab versions. Depending on your GitLab CI workloads, pipeline size, job runtimes, and _disk size_ 😊, you'll want to set the expiration time that works best for your environment. Always err on the side of larger for your global setting as you don't want to negatively affect a job run because the artifact was deleted too soon.
+The [GitLab default policy for artifact expiration](https://docs.gitlab.com/ee/user/gitlab_com/index.html#gitlab-cicd) differs between GitLab.com and on-prem GitLab versions. Depending on your GitLab CI workloads, pipeline size, job runtimes, and _disk size_ 😊, you'll want to set the expiration time that works best for your environment. Always err on the side of larger for your default setting as you don't want to negatively affect a job run because the artifact was deleted too soon.
+
+[GitLab Documentation on default artifact expiration.](https://docs.gitlab.com/ee/user/admin_area/settings/continuous_integration.html#default-artifacts-expiration-core-only)
 
 | **Setting** | **GitLab.com** | **On-Prem GitLab Versions** |
 |---|---|---|
 | Artifacts [expiry time](https://docs.gitlab.com/ee/ci/yaml/README.html#artifactsexpire_in) | kept forever | 30 days |
 
-### Set Artifact Retention in _.gitlab-ci.yml_
+### Set Artifact Expiration in _.gitlab-ci.yml_
 
-Starting with GitLab 8.9 artifact expiration within the `.gitlab-ci.yml` became possible. This becomes a necessity if you're using GitLab.com as you're unable to set the global artifact expiration policy. It also gives you finer control in on-prem GitLab instances as it allows you to delete an artifact prior to when the global retention policy comes into effect.
+Starting with GitLab 8.9 artifact expiration within the `.gitlab-ci.yml` became possible. This becomes a necessity if you're using GitLab.com as you're unable to set the default artifact expiration policy. It also gives you finer control in on-prem GitLab instances as it allows you to delete an artifact prior to when the default expiration policy comes into effect.
 
 [GitLab Documentation on the `artifacts:expire_in` setting.](https://docs.gitlab.com/ee/ci/yaml/#artifactsexpire_in)
 
@@ -50,7 +52,7 @@ job:
 
 ## Stop-Gap
 
-Now that I've discussed proper handling of Job Artifacts, let's move on to the stop-gap... It's all fine and dandy to know about proper artifact retention settings but what do I do with the artifacts that were created previously? GitLab provides two methods for deleting artifacts that have no expiration:
+Now that I've discussed proper handling of Job Artifacts, let's move on to the stop-gap... It's all fine and dandy to know about proper artifact expiration settings but what do I do with the artifacts that were created previously? GitLab provides two methods for deleting artifacts that have no expiration:
 
 * GitLab Web UI
 * GitLab REST API
