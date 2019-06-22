@@ -31,4 +31,4 @@ categories = [
   * [Travis CI DPL](https://github.com/travis-ci/dpl) - can be used with GitLab CI as well!
   * [Travis CI Documentation](https://docs.travis-ci.com/)
 
-{{< slideshare id="151275136" >}}
+{{< slideshare id="BZkEwBB9ybCB4K" >}}
