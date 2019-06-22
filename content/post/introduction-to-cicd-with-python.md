@@ -8,7 +8,8 @@ tags = [
     "gitlabci",
     "gitlab ci",
     "travisci",
-    "travis ci"
+    "travis ci",
+    "ci/cd"
 ]
 date = "2019-06-22"
 categories = [
@@ -16,8 +17,18 @@ categories = [
 ]
 +++
 
-As promised, you can download the slides from my presentation [here]({{< siteurl >}}Introduction_to_CI-CD_with_Python.pptx).
-
-Here is the vBrownBag recording:
-
 {{< youtube zeqLTXNEbIo >}}
+
+## Useful Links
+
+* GitLab CI
+  * [GitLab CI Sample Code](https://gitlab.com/carceneaux/gitlab-ci-python-demo)
+  * [Test and deploy a Python application with GitLab CI/CD](https://docs.gitlab.com/ee/ci/examples/test-and-deploy-python-application-to-heroku.html)
+  * [Using GitLab CI/CD with a GitHub repository](https://docs.gitlab.com/ee/ci/ci_cd_for_external_repos/github_integration.html)
+  * [GitLab CI Documentation](https://docs.gitlab.com/ee/ci/)
+* Travis CI
+  * [Travis CI Sample Code](https://github.com/carceneaux/travis-ci-python-demo)
+  * [Travis CI DPL](https://github.com/travis-ci/dpl) - can be used with GitLab CI as well!
+  * [Travis CI Documentation](https://docs.travis-ci.com/)
+
+{{< slideshare id="151275136" >}}
