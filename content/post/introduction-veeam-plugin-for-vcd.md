@@ -11,7 +11,7 @@ tags = [
     "veeam plugin for vcd",
     "veeam extension for vcd"
 ]
-date = "2019-09-27"
+date = "2019-09-26"
 categories = [
     "Post"
 ]
