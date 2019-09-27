@@ -24,11 +24,13 @@ Veeam Backup & Replication version 9.5 released the [vCloud Director (vCD) Self 
 
 Early last year, vCloud Director 9.1 released the [vCD Extensibility Framework](https://github.com/vmware/vcd-ext-sdk). This new functionality is a game changer! It provided an avenue for developing custom portals to be accessible within vCD.
 
-Since then, I've wanted to make the Veeam Self Service Portal utilize this framework for added vCD goodness. 😊 I'm happy to report that today I'm releasing the [Veeam Plugin for vCD](https://test.arsano.ninja)!
+Since then, I've wanted to make the Veeam Self Service Portal utilize this framework for added vCD goodness. 😊 I'm happy to report that today I'm releasing the [Veeam Plugin for vCD](https://github.com/VeeamHub/veeam-plugin-for-vcd)!
 
-[Documentation for deployment & configuration of this plugin can be found here.](https://test.arsano.ninja)
+[Documentation for deployment & configuration of this plugin can be found here.](https://veeamhub.github.io/veeam-plugin-for-vcd/)
 
 _Note: This new plugin does not change the Architecture & Design of the Veeam Self Service Portal. It serves only as a medium to easily present the Self Service Portal within vCD._
+
+If you have any questions/problems/feature requests about the plugin, please use the projects [GitHub Issue Tracker](https://github.com/VeeamHub/veeam-plugin-for-vcd/issues/new/choose).
 
 Check out the new plugin in action:
 
