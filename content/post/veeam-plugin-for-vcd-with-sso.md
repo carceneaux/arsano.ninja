@@ -23,7 +23,7 @@ categories = [
 ]
 +++
 
-With the release of Veeam Backup & Replication version 10 [around the corner](https://go.veeam.com/v10), it's only fitting that we get some added goodness with a new version of the [Veeam Plugin for vCloud Director (vCD)](https://github.com/VeeamHub/veeam-plugin-for-vcd). I'm happy to announce that a new version of the plugin is available today!
+With the release of Veeam Backup & Replication version 10 [around the corner](https://go.veeam.com/v10), it's only fitting that we get some added goodness with a new version of the [Veeam Plugin for vCloud Director](https://github.com/VeeamHub/veeam-plugin-for-vcd). I'm happy to announce that a new version of the plugin is available today!
 
 New features of the plugin include:
 
