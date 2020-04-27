@@ -17,11 +17,11 @@ categories = [
 ]
 +++
 
-After completing my PowerShell script recently to [upgrade Veeam Backup & Replication environments to v10](https://github.com/VeeamHub/powershell/tree/master/BR-UpgradeV10), I wanted to take the next step and automate the full lifecycle process. I've had Ansible in my sights for a while to do this as it can natively use PowerShell.
+After completing my PowerShell script to [upgrade Veeam Backup & Replication environments to v10](https://github.com/VeeamHub/powershell/tree/master/BR-UpgradeV10), I wanted to take the next step and automate the full lifecycle process. I've had Ansible in my sights for a while to do this as it can natively use PowerShell.
 
 [Markus Kraus](https://twitter.com/vMarkus_K), a Veeam VanGaurd, started work along this same train of thought last year and recently updated the code to support [Veeam Backup & Replication v10](https://mycloudrevolution.com/en/2020/02/05/veeam-availability-suite-10-unattended-installation/). As this was my first Ansible role to write, it was very helpful to use Markus's code as a base for my project.
 
-Here are the capabilities of this release:
+## Capabilities of this release
 
 * Automated *Install/Patch/Upgrade* operations for all products in the [Veeam Availability Suite](https://www.veeam.com/data-center-availability-suite.html)
 * Versions supported for *Install/Patch*:
@@ -62,16 +62,16 @@ Ansible playbooks are used to execute complex instructions in a simplistic manne
         iso_download: true
         license: true
         source_license: "/root/ansible/license.lic"
-        sql_install_username: "sql_install"
+        sql_install_username: "sql_install" #used to install SQL Express (admin)
         sql_install_password: "ChangeM3!"
-        sql_service_username: "svc_sql"
+        sql_service_username: "svc_sql" #used to run SQL Express (non-admin)
         sql_service_password: "ChangeM3!"
-        sql_username: "sa"
+        sql_username: "sa" #used by Veeam to connect to SQL Express
         sql_password: "ChangeM3!"
         # https://docs.ansible.com/ansible/latest/user_guide/playbooks_vault.html#single-encrypted-variable
 ```
 
-Included with the code on VeeamHub, I've provided plenty of [sample playbooks](https://github.com/VeeamHub/veeam-ansible/tree/master/roles/veeam_vas#example-playbooks).
+Included with the documentation on VeeamHub, I've provided plenty of [sample playbooks](https://github.com/VeeamHub/veeam-ansible/tree/master/roles/veeam_vas#example-playbooks).
 
 ![Ansible VBR 10 Install]({{< siteurl >}}images/ansible-vbr-install.png)
 
@@ -81,7 +81,7 @@ If you'd like to support this community project, I welcome contributions from th
 
 ## Next Steps
 
-I'm currently working on the next piece of this Ansible collection which will be performing basic Veeam Backup & Replication configuration tasks:
+I'm currently working on feature enhancements for this Ansible collection. Currently, I have in mind to add support for performing basic Veeam Backup & Replication configuration tasks:
 
 * Configuration Backup settings
 * Add Veeam Managed Servers
