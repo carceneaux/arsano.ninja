@@ -84,11 +84,11 @@ If you'd like to support this community project, I welcome contributions from th
 I'm currently working on feature enhancements for this Ansible collection. Currently, I have in mind to add support for performing basic Veeam Backup & Replication configuration tasks:
 
 * Configuration Backup settings
-* Add Veeam Managed Servers
-* Add Veeam Backup Proxy
-* Add Veeam Backup Repository
-* Add VMware vCenter
-* Add VMware vCloud Director
+* Add/Remove Veeam Managed Servers
+* Add/Remove Veeam Backup Proxy
+* Add/Remove Veeam Backup Repository
+* Add/Remove VMware vCenter
+* Add/Remove VMware vCloud Director
 * More to come!
 
 If you have any questions/problems/feature requests about this Ansible collection, please use the projects [GitHub Issue Tracker](https://github.com/VeeamHub/veeam-ansible/issues/new/choose).
