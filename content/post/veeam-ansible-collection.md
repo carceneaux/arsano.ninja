@@ -17,9 +17,11 @@ categories = [
 ]
 +++
 
-After completing my PowerShell script recently to [upgrade Veeam Backup & Replication environments to v10](https://github.com/VeeamHub/powershell/tree/master/BR-UpgradeV10), I wanted to take the next step and automate the full lifecycle process. I've had Ansible in my sights for a while to do this as it can natively use PowerShell so I took the plunge. [Markus Kraus](https://twitter.com/vMarkus_K), a Veeam VanGaurd, started work along this same train of thought last year and this year updated the code to support [Veeam Backup & Replication v10](https://mycloudrevolution.com/en/2020/02/05/veeam-availability-suite-10-unattended-installation/).
+After completing my PowerShell script recently to [upgrade Veeam Backup & Replication environments to v10](https://github.com/VeeamHub/powershell/tree/master/BR-UpgradeV10), I wanted to take the next step and automate the full lifecycle process. I've had Ansible in my sights for a while to do this as it can natively use PowerShell.
 
-As this was my first Ansible role to write, it was very helpful to use Markus's code as a base for my project. Here are the capabilities of this release:
+[Markus Kraus](https://twitter.com/vMarkus_K), a Veeam VanGaurd, started work along this same train of thought last year and recently updated the code to support [Veeam Backup & Replication v10](https://mycloudrevolution.com/en/2020/02/05/veeam-availability-suite-10-unattended-installation/). As this was my first Ansible role to write, it was very helpful to use Markus's code as a base for my project.
+
+Here are the capabilities of this release:
 
 * Automated *Install/Patch/Upgrade* operations for all products in the [Veeam Availability Suite](https://www.veeam.com/data-center-availability-suite.html)
 * Versions supported for *Install/Patch*:
@@ -45,9 +47,32 @@ As this was my first Ansible role to write, it was very helpful to use Markus's 
 
 The source code for this project can be found in [VeeamHub](https://github.com/VeeamHub/veeam-ansible). Downloading & using the code is super easy with the use of [Ansible Galaxy](https://galaxy.ansible.com/veeamhub/veeam).
 
-This code was tested against:
+If you've never used Ansible previously, I recommend getting your feet wet with the [Ansible Getting Started Guide](https://docs.ansible.com/ansible/latest/network/getting_started/first_playbook.html). It does a really good job of explaining what Ansible is and how it works. The part I like most about Ansible is it doesn't require an agent to be installed on managed systems as it uses remote connection methods like SSH & WinRM instead.
 
-* Windows Server 2019
-* Windows Server 2016 (64-bit)
+Ansible playbooks are used to execute complex instructions in a simplistic manner. Below is a sample playbook to install Veeam Backup & Replication v10:
+
+```yml
+- name: Veeam Backup & Replication v10 Install
+  hosts: veeam
+  tasks:
+    - include_role:
+        name: veeamhub.veeam.veeam_vas
+        tasks_from: vbr_install
+      vars:
+        iso_download: true
+        license: true
+        source_license: "/root/ansible/license.lic"
+        sql_install_username: "sql_install"
+        sql_install_password: "ChangeM3!"
+        sql_service_username: "svc_sql"
+        sql_service_password: "ChangeM3!"
+        sql_username: "sa"
+        sql_password: "ChangeM3!"
+        # https://docs.ansible.com/ansible/latest/user_guide/playbooks_vault.html#single-encrypted-variable
+```
+
+Included with the code on VeeamHub, I've provided plenty of [sample playbooks](https://github.com/VeeamHub/veeam-ansible/tree/master/roles/veeam_vas#example-playbooks).
+
+![Ansible VBR 10 Install]({{< siteurl >}}images/ansible-vbr-install.png)
 
 If you have any questions/problems/feature requests about this Ansible collection, please use the projects [GitHub Issue Tracker](https://github.com/VeeamHub/veeam-ansible/issues/new/choose).
