@@ -37,7 +37,7 @@ Here are the capabilities of this release:
   * Configuration Backup is performed prior to *Patch/Upgrade*
   * Cloud Connect environments are supported
   * Disables jobs prior to *Patch/Upgrade*
-  * Enables jobs prior to *Patch/Upgrade*
+  * Enables jobs after *Patch/Upgrade*
 * Veeam Backup Enterprise Manager
   * SQL DB Backup is performed prior to *Patch/Upgrade*
   * Cloud Connect environments are supported
@@ -74,5 +74,21 @@ Ansible playbooks are used to execute complex instructions in a simplistic manne
 Included with the code on VeeamHub, I've provided plenty of [sample playbooks](https://github.com/VeeamHub/veeam-ansible/tree/master/roles/veeam_vas#example-playbooks).
 
 ![Ansible VBR 10 Install]({{< siteurl >}}images/ansible-vbr-install.png)
+
+## Contributing
+
+If you'd like to support this community project, I welcome contributions from the community. For more information, feel free to reference the [project contributing guide](https://github.com/VeeamHub/veeam-ansible/blob/master/CONTRIBUTING.md).
+
+## Next Steps
+
+I'm currently working on the next piece of this Ansible collection which will be performing basic Veeam Backup & Replication configuration tasks:
+
+* Configuration Backup settings
+* Add Veeam Managed Servers
+* Add Veeam Backup Proxy
+* Add Veeam Backup Repository
+* Add VMware vCenter
+* Add VMware vCloud Director
+* More to come!
 
 If you have any questions/problems/feature requests about this Ansible collection, please use the projects [GitHub Issue Tracker](https://github.com/VeeamHub/veeam-ansible/issues/new/choose).
