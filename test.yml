@@ -39,7 +39,7 @@ params:
     - post
   intro: true
   headline: ""
-  description: "Focused mainly around Automation & Virtualization"
+  description: "Focused on Automation & Virtualization"
   github: "https://github.com/carceneaux"
   gitlab: "https://gitlab.com/carceneaux"
   linkedin: "https://linkedin.com/in/chris-arceneaux-8903047/"
@@ -48,7 +48,7 @@ params:
   opengraph: true
   shareTwitter: true
   shareFacebook: false
-  shareGooglePlus: true
+  shareGooglePlus: false
   shareLinkedIn: true
   dateFormat: "Mon, Jan 2, 2006"
   exponeaJsUrl: ""
