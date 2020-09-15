@@ -45,7 +45,7 @@ disqusShortname = "arsano-ninja"
 
 [[menu.main]]
     name = "Blog"
-    url = "/post/"
+    url = "/"
     weight = 1
 
 [[menu.main]]
