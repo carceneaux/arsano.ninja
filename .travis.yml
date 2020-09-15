@@ -1,11 +1,11 @@
 ### Python is necessary for AWS CLI
 language: python
 python:
-  - "3.6.5"
+  - "3.8.5"
 
 ### Installing pre-requisites
 install:
-    - wget https://github.com/gohugoio/hugo/releases/download/v0.44/hugo_0.44_Linux-64bit.deb
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.75.1/hugo_0.75.1_Linux-64bit.deb
     - sudo dpkg -i hugo*.deb
     - pip install awscli
     - gem install mdl
@@ -13,7 +13,7 @@ install:
 ### Testing markdown and building website
 script:
     - mdl -r ~MD002,~MD013,~MD033 content/ # rules that have been exluded
-    - if [[ $TRAVIS_BRANCH == "master" ]]; then hugo; else hugo --config=test.toml; fi
+    - if [[ $TRAVIS_BRANCH == "master" ]]; then hugo; else hugo --config=test.yml; fi
 
 ### Sending newly generated website to S3 bucket
 deploy:
