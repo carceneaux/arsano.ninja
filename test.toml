@@ -6,6 +6,17 @@ copyright = "Chris Arceneaux"
 googleAnalytics = "XXX"
 disqusShortname = "arsano-ninja"
 
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    tabWidth: 2
+
 [Privacy]
 
 [Privacy.disqus]
@@ -28,17 +39,18 @@ disqusShortname = "arsano-ninja"
     headline = ""
     description = "Focused mainly around Automation & Virtualization"
     github = "https://github.com/carceneaux"
+    gitlab: "https://gitlab.com/carceneaux"
     linkedin = "https://linkedin.com/in/chris-arceneaux-8903047/"
     twitter = "https://twitter.com/chris_arceneaux"
     email = "carcenea@gmail.com"
     opengraph = true
     shareTwitter = true
     shareFacebook = false
-    shareGooglePlus = true
+    shareGooglePlus = false
     shareLinkedIn = true
     dateFormat = "Mon, Jan 2, 2006"
-    highlightJsUrl = ""
-    highlightJsLocalUrl = "js/highlight.pack.js"
+    readingTime: true
+    readingTimeText: "Estimated reading time:"
 
 [Permalinks]
     post = "/:year/:month/:day/:filename/"
