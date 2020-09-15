@@ -5,6 +5,8 @@ languageCode = "en-us"
 copyright = "Chris Arceneaux"
 googleAnalytics = "XXX"
 disqusShortname = "arsano-ninja"
+pygmentsUseClasses: true
+pygmentsCodefences: true
 
 markup:
   highlight:
@@ -17,24 +19,24 @@ markup:
     noClasses: true
     tabWidth: 2
 
-[Privacy]
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    anonymizeIP: true
+    respectDoNotTrack: true
+    useSessionStorage: false
 
-[Privacy.disqus]
-    disable = false
-
-[Privacy.googleAnalytics]
-    anonymizeIP = true
-    respectDoNotTrack = true
-    useSessionStorage = false
-
-[Author]
+author:
     name = "Chris Arceneaux"
     profile = "https://test.arsano.ninja/page/about/"
 
-[Taxonomies]
+taxonomies:
     tag = "tags"
 
-[Params]
+params:
+    mainSections:
+        - post
     intro = true
     headline = ""
     description = "Focused mainly around Automation & Virtualization"
@@ -46,26 +48,29 @@ markup:
     opengraph = true
     shareTwitter = true
     shareFacebook = false
-    shareGooglePlus = false
+    shareGooglePlus = true
     shareLinkedIn = true
     dateFormat = "Mon, Jan 2, 2006"
+    exponeaJsUrl: ""
+    exponeaTarget: ""
+    exponeaToken: ""
+    exponeaTrackVisits: false
     readingTime: true
     readingTimeText: "Estimated reading time:"
+    fathomUrl: ""
+    fathomSiteId: ""
 
-[Permalinks]
+permalinks:
     post = "/:year/:month/:day/:filename/"
 
-[[menu.main]]
-    name = "Blog"
-    url = "/"
-    weight = 1
-
-[[menu.main]]
-    name = "About"
-    url = "/page/about/"
-    weight = 2
-
-[[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
+menu:
+    main:
+      - name = "Blog"
+        url = "/"
+        weight = 1
+      - name = "About"
+        url = "/page/about/"
+        weight = 2
+      - name = "Tags"
+        url = "/tags/"
+        weight = 3
