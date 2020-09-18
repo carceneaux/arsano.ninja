@@ -1,6 +1,6 @@
 +++
 title = "Quick Ansible Setup"
-description = "Using Ansible with Cygwin"
+description = "Installing Ansible with Cygwin"
 tags = [
     "ansible",
     "cygwin",
@@ -10,7 +10,7 @@ tags = [
     "openssh",
     "chocolatey"
 ]
-date = "2020-09-17"
+date = "2020-09-18"
 categories = [
     "Post"
 ]
