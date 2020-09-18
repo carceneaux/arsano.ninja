@@ -31,11 +31,10 @@ In this post, I'm going to review the steps involved in getting Ansible installe
 * Logged in as default `administrator`
   * Another admin account will work, but you'll need to update some of the commands provided in this guide accordingly.
 
-## Steps
-
 Here is a video demonstrating the steps outlined below:
-
 {{< youtube JFiUF5om1f8 >}}
+
+## Steps
 
 * Open an elevated PowerShell prompt
   * Right-click and select *Run as Administrator*
