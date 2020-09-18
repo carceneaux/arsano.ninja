@@ -18,25 +18,31 @@ categories = [
 
 **NOTE:** *This solution should only be used in non-production environments as a method to get familiar with Ansible. For production use, I recommend installing Ansible on a dedicated Linux server.*
 
-An automated deployment tool is a must have for any IT environment. In my lab, that's ***Ansible***. I've used Ansible in my lab to automated VM deployment/destruction, adding allowed SSH keys for access on my servers, joining/leaving AD domain, and monitoring the newly deployed VMs. This is very useful as I frequently deploy/destroy VMs for testing a specific use case.
+An automated deployment tool is a must have for any IT environment. In my lab, that's ***Ansible***. I've used Ansible in my lab to automate VM deployment/destruction, adding SSH keys for remote access to my servers, joining/leaving AD domain, and monitoring the newly deployed VMs. This is very useful as I frequently deploy/destroy VMs for testing a specific use case.
 
-For a Windows admin, Ansible can seem daunting... For one, it runs on linux. Second, it's based off of Python. I'm here to tell you, it's not that difficult. In fact, did you know Ansible is one of the few configuration management tools out there that can easily/natively use PowerShell code?
+For a Windows admin, Ansible can seem daunting... For one, it runs on linux. Second, it's based off of Python. I'm here to tell you, it's not that difficult. In fact, did you know that Ansible is one of the few configuration management tools out there that can easily/natively use PowerShell code?
 
-In this post, I'm going to review the steps involved in getting Ansible installed & running on Windows Server 2019. While install times may vary due to lab resources and internet speed, I'm able to complete the steps outlined below for installing & testing Ansible in a little over **20 minutes**.
+In this post, I'm going to review the steps involved in getting Ansible installed & running on Windows Server 2019. While install times may vary due to lab resources and internet speed, I'm able to complete the steps outlined below for installing Ansible in a little over **20 minutes**.
+
+## Requirements
+
+* VM or physical server with Windows Server 2019 installed
+  * Server needs internet access
+* Logged in as default `administrator`
+  * Another admin account will work, but you'll need to update some of the commands provided in this guide accordingly.
+
+## Steps
 
 Here is a video demonstrating the steps outlined below:
 
-![Youtube Video]()
+{{< youtube JFiUF5om1f8 >}}
 
-* Use a server or VM with Windows Server 2019 installed
-  * Windows 10 should work as well but this is untested
-* Login as `administrator`
-  * Another admin account will work, but you'll need to update some of the commands provided in this guide accordingly.
 * Open an elevated PowerShell prompt
-  * Right-click on it and select Run as Administrator
+  * Right-click and select *Run as Administrator*
 * PowerShell: *Copy/Paste code below*
   * [Install Chocolatey](https://chocolatey.org/docs/installation)
-  * Install Cygwin & Ansible requirements
+  * Install Cygwin
+  * Install Ansible requirements
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -72,6 +78,8 @@ Start-Service sshd
 ansible --version
 ```
 
+![Screenshot of Ansible version output]({{< siteurl >}}images/ansible-version-output.png)
+
 * Cygwin: *Copy/Paste code below*
   * Generate SSH cert
   * Accept defaults
@@ -99,6 +107,7 @@ Restart-Service sshd
 * Cygwin: *Copy/Paste code below*
   * Test SSH to verify it's working properly
   * During the first run, you'll need to answer `yes`
+  * After successful connection, you can `exit` the SSH session.
 
 ```bash
 ssh administrator@$(hostname)
@@ -137,17 +146,19 @@ EOF
 ansible $(hostname) -m win_ping
 ```
 
+![Screenshot of configuration success]({{< siteurl >}}images/ansible-configuration-success.png)
+
 Ansible is now setup and ready for use. For me, this took around 20 minutes. This is a good point to take a snapshot of this VM or turn this server into a template depending on what you want to use Ansible for.
 
-Now, let's put Ansible to use and perform and automated install of Veeam Backup & Replication Server. As Ansible is now installed, *we no longer will be using the PowerShell session we had open and all further commands will be executed within the Cygwin Terminal.*
+Now let's put Ansible to use and perform an automated install of Veeam Backup & Replication Server. As Ansible is now installed, *we will no longer be using the PowerShell session we had open and all further commands will be executed from within the Cygwin Terminal.*
 
-* Install Veeam Ansible collection
+* Install Veeam Ansible collection: *Copy/Paste code below*
 
 ```bash
 ansible-galaxy collection install veeamhub.veeam
 ```
 
-* Add Ansible Playbook
+* Add Ansible Playbook: *Copy/Paste code below*
   * While it's not a requirement, I recommend you update the passwords below. Don't worry about creating these accounts. Ansible will do that for you!
   * `sql_install` is a temp Windows admin account used to install SQL Express
   * `sql_service` is the non-admin Windows account that the SQL service will use to run
@@ -175,10 +186,12 @@ cat <<EOF > veeam-vbr-10-install.yml
 EOF
 ```
 
-* Install Veeam Backup & Replication Server
+* Install Veeam Backup & Replication Server: *Copy/Paste code below*
 
-*Please note that this will first kick off a download of the software ISO. ISO size is 3.8GB so your install time will vary. In my lab with gigabit internet, the time to complete the below playbook was XX minutes.*
+*Please note that this will first kick off a download of the Veeam ISO. ISO size is 3.8GB so your install time will vary. In my lab with gigabit internet, the time to complete the below playbook was 33 minutes.*
 
 ```bash
 ansible-playbook veeam-vbr-10-install.yml
 ```
+
+![Screenshot of Playbook Success]({{< siteurl >}}images/ansible-playbook-success.png)
