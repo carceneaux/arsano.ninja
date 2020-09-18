@@ -24,14 +24,15 @@ For a Windows admin, Ansible can seem daunting... For one, it runs on linux. Sec
 
 In this post, I'm going to review the steps involved in getting Ansible installed & running on Windows Server 2019. While install times may vary due to lab resources and internet speed, I'm able to complete the steps outlined below for installing Ansible in a little over **20 minutes**.
 
-## Requirements
+## My Lab Setup
 
-* VM or physical server with Windows Server 2019 installed
-  * Server needs internet access
+* Windows Server 2019 VM
+  * *Needs internet access*
 * Logged in as default `administrator`
   * Another admin account will work, but you'll need to update some of the commands provided in this guide accordingly.
 
-Here is a video demonstrating the steps outlined below:
+## Video
+
 {{< youtube JFiUF5om1f8 >}}
 
 ## Steps
