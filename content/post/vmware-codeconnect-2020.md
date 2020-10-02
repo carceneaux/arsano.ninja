@@ -18,7 +18,7 @@ categories = [
 ]
 +++
 
-Today I'll be presenting at VMware CodeConnect on what might be the best kept secret of vSphere...First Class Disks! If you don't know what they are or you'd like information on capabilities and use cases, I recommend you [tune in](http://web-prod.arsano.lab/Chris/index.html)!
+Today I'll be presenting at VMware CodeConnect on what might be the best kept secret of vSphere...First Class Disks! If you don't know what they are or you'd like information on capabilities and use cases, I recommend you [tune in](https://vmwarecodeconnect.github.io/CodeConnect2020/Chris/)!
 
 If anyone has any follow-up questions after the presentation, please feel free to reach out to me via [Twitter](https://twitter.com/chris_arceneaux) or [VMware Code Slack](https://code.vmware.com/web/code/join).
 
