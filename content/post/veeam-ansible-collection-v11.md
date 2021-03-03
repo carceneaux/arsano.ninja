@@ -1,6 +1,6 @@
 +++
-title = "Veeam Ansible Collection"
-description = "v11 Support"
+title = "Ansible Update for Veeam v11"
+description = "Veeam Collection for Ansible"
 tags = [
     "veeam",
     "ansible",
