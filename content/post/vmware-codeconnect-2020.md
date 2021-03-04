@@ -22,6 +22,10 @@ Today I'll be presenting at VMware CodeConnect on what might be the best kept se
 
 If anyone has any follow-up questions after the presentation, please feel free to reach out to me via [Twitter](https://twitter.com/chris_arceneaux) or [VMware Code Slack](https://code.vmware.com/web/code/join).
 
-As promised, here are the slides from my presentation:
+UPDATE:
+
+{{< youtube kFtAnF6BzN4 >}}
+
+Here are the slides from my presentation:
 
 {{< slideshare id="ggDql1xgZWEfsw" >}}
