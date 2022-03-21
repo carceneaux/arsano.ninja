@@ -35,7 +35,7 @@ jobs:
         if: success()
         run: hugo --minify --config=config.yml
 
-      - name: Deploy
+      - name: Deploy site to AWS
         if: success()
         uses: reggionick/s3-deploy@v3
         with:

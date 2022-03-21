@@ -21,7 +21,7 @@ jobs:
           config: .markdownlint.json
           files: 'content/'
 
-      - name: Deploy the site
+      - name: Deploy test site to GitHub Pages
         if: success()
         uses: benmatselby/hugo-deploy-gh-pages@master
         env:
