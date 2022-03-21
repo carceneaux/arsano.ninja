@@ -1,9 +1,9 @@
 name: Hugo Test Build
-# on:
-#   # Activate on any push to branches (excluding master)
-#   push:
-#     branches-ignore:
-#       - master
+on:
+  # Activate on any push to branches (excluding master)
+  push:
+    branches-ignore:
+      - master
 
 jobs:
   deploy:
