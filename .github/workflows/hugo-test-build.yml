@@ -1,0 +1,33 @@
+name: Hugo Test Build
+on:
+  # Activate on any push to branches (excluding master)
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  deploy:
+    name: Hugo deployment
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Markdown lint
+        uses: articulate/actions-markdownlint@v1
+        with:
+          config: .markdownlint.json
+          files: 'content/'
+
+      - name: Deploy test site to GitHub Pages
+        if: success()
+        uses: benmatselby/hugo-deploy-gh-pages@master
+        env:
+          HUGO_VERSION: 0.95.0
+          TARGET_REPO: carceneaux/carceneaux.github.io
+          TARGET_BRANCH: master
+          TOKEN: ${{ secrets.TOKEN }}
+          HUGO_ARGS: '--config=test.yml'
+          CNAME: test.arsano.ninja
