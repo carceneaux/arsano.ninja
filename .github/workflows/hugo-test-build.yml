@@ -13,6 +13,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Installing basic utility functions for Core Chef development
+        run: |
+          gem install chef-utils
+
       - name: Installing Markdown Lint Tool
         run: |
           gem install mdl
