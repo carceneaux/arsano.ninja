@@ -1,0 +1,34 @@
+name: Hugo Test Build
+on:
+  # Activate on any push to branches (excluding master)
+  push:
+    branches-ignore:
+      - master
+
+jobs:
+  validate:
+    name: Markdown validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Installing Markdown Lint Tool
+        run: |
+          gem install mdl
+
+  deploy:
+    name: Hugo deployment
+    if: success()
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Deploy the site
+        uses: benmatselby/hugo-deploy-gh-pages@master
+        env:
+          HUGO_VERSION: 0.95.0
+          TARGET_REPO: carceneaux/carceneaux.github.io
+          TARGET_BRANCH: master
+          TOKEN: ${{ secrets.TOKEN }}
+          HUGO_ARGS: '--config=test.yml'
+          CNAME: test.arsano.ninja
