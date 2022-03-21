@@ -18,6 +18,14 @@ jobs:
         with:
           config: .markdownlint.json
           files: 'content/'
+        
+      - name: Initializing submodules
+        run: |
+          git submodule init
+
+      - name: Updating submodules
+        run: |
+          git submodule update
 
       - name: Deploy the site
         if: success()
