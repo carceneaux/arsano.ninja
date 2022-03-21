@@ -6,28 +6,21 @@ on:
       - master
 
 jobs:
-  validate:
-    name: Markdown validation
+  deploy:
+    name: Hugo deployment
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Installing basic utility functions for Core Chef development
-        run: |
-          gem install chef-utils
-
-      - name: Installing Markdown Lint Tool
-        run: |
-          gem install mdl
-
-  deploy:
-    name: Hugo deployment
-    if: success()
-    runs-on: ubuntu-latest
-    steps:
+      - name: Markdown lint
+        uses: articulate/actions-markdownlint@v1
+        with:
+          config: .markdownlint.json
+          files: 'content/'
 
       - name: Deploy the site
+        if: success()
         uses: benmatselby/hugo-deploy-gh-pages@master
         env:
           HUGO_VERSION: 0.95.0
