@@ -1,14 +1,9 @@
 name: Hugo Deployment
 on:
-  # Activate on any push to branches (excluding master)
   push:
-    branches-ignore:
+    branches:
+      # deploy on updates only on master
       - master
-# on:
-#   push:
-#     branches:
-#       # deploy on updates only on master
-#       - master
 
 jobs:
   deploy:
